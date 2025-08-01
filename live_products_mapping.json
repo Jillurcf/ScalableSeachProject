@@ -1,0 +1,29 @@
+{
+  "mappings": {
+    "properties": {
+      "title": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "sub_title": {
+        "type": "text"
+      },
+      "description": {
+        "type": "text"
+      },
+      "category": {
+        "type": "text"
+      },
+      "sub_category": {
+        "type": "text"
+      },
+      "brand": {
+        "type": "text"
+      }
+    }
+  }
+}
