@@ -5,8 +5,8 @@ const mysql = require('mysql2');
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'Barof1983?', // Update this
-  database: 'searchdb' // Update this
+  password: 'Barof1983?', 
+  database: 'searchdb' 
 });
 
 const indexProducts = () => {
@@ -20,20 +20,20 @@ const indexProducts = () => {
       try {
         await client.index({
           index: 'live_products',
-          id: product.id, // assuming `id` is unique
+          id: product.id, 
           body: {
-            title: product.name || '',                       // e.g. "ANTI"
-            sub_title: product.title || '',                  // e.g. "ANTI-HAIR LOSS SHAMPOO..."
-            description: product.description || '',          // nullable
-            brand: product.brand || '',                      // e.g. "NATUR VITAL"
-            category: product.category || '',                // e.g. "hair"
-            sub_category: product.sub_category || '',        // e.g. "shampoos"
-            price: product.price || 0,                       // optional but may be useful
-            url: product.url || '',                          // optional
-            image: product.image || '',                      // JSON string or parse first
-            gender: product.gender || '',                    // e.g. "male", "female", etc.
-            type: product.type || '',                        // e.g. "beauty"
-            status: product.status || '',                    // e.g. "new"
+            title: product.name || '',                       
+            sub_title: product.title || '',                 
+            description: product.description || '',        
+            brand: product.brand || '',                   
+            category: product.category || '',                
+            sub_category: product.sub_category || '',       
+            price: product.price || 0,                      
+            url: product.url || '',                        
+            image: product.image || '',                    
+            gender: product.gender || '',                  
+            type: product.type || '',                     
+            status: product.status || '',                    
           }
         });
       } catch (indexError) {
